@@ -1,14 +1,28 @@
 #include <stdio.h>
 
-void printMessage(const char *message) {
+// rename
+void displayMessage(const char *message) {
     printf("%s\n", message);
 }
 
-void addNumbers(int a, int b) {
-    printf("Sum: %d\n", a + b);
+// delete
+// void addNumbers(int a, int b) {
+//     printf("Sum: %d\n", a + b);
+// }
+
+// change signature
+void sumAndDisplay(int number1, int number2) {
+    printf("Total: %d\n", number1 + number2);
+}
+
+// add method
+void addPrint() {
+    printf("This a new method\n");
 }
 
 int main() {
-    addNumbers(5, 10);
+
+    sumAndDisplay(5, 10);
+    addPrint();
     return 0;
 }
