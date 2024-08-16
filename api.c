@@ -1,28 +1,61 @@
 #include <stdio.h>
 
+// add & remove
+int add(int a, int b) {
+    return a + b;
+}
+
 // rename
-void displayMessage(const char *message) {
+void displayMessage() {
+    printf("Hello, World!\n");
+}
+
+// change signature
+int getValue() {
+    return 42;
+}
+
+void printSum(int a, int b) {
+    printf("Sum: %d\n", a + b);
+}
+
+void multiply(int x, int y) {
+    printf("Product: %d\n", x * y);
+}
+
+void displayValue(int* ptr) {
+    printf("Value: %d\n", *ptr);
+}
+
+// extract function
+// Function to process and print a greeting message
+void createAndPrintGreeting(const char* name) {
+    char message[50];
+    // Create the greeting message
+    snprintf(message, sizeof(message), "Hello, %s! Welcome!", name);
+    // Print the greeting message
     printf("%s\n", message);
 }
 
-// delete
-// void addNumbers(int a, int b) {
-//     printf("Sum: %d\n", a + b);
-// }
 
-// change signature
-void sumAndDisplay(int number1, int number2) {
-    printf("Total: %d\n", number1 + number2);
+
+
+
+
+
+
+
+// inline function
+double calculateArea(double radius) {
+    return 3.14159 * radius * radius;
 }
 
-// add method
-void addPrint() {
-    printf("This a new method\n");
+void performAreaCalculation(double radius) {
+    double area = calculateArea(radius);  // 调用普通函数
+    printf("Area: %.2f\n", area);
 }
+
 
 int main() {
 
-    sumAndDisplay(5, 10);
-    addPrint();
-    return 0;
 }
