@@ -1,52 +1,62 @@
 #include <stdio.h>
 
 // add & remove
-double subtract(int a, int b) {
-    return a - b;
+int add(int a, int b) {
+    return a + b;
 }
 
 // rename
-void printHello() {
+void displayHello() {
     printf("Hello, World!\n");
     printf("This is a method that test rename!\n");
 }
 
+void calculateShapeArea(int width, int height) {
+    int area = width * height;
+    printf("Area: %d\n", area);
+}
+
 // change signature
-double getValue() {  // Changed return type to double
-    return 42.0;
+int getValue() {
+    return 42;
 }
 
-void printSum(int a, int b, int c) {  // Added a parameter
-    printf("Sum: %d\n", a + b + c);
+void printSum(int a, int b) {
+    printf("Sum: %d\n", a + b);
 }
 
-void displayValue(const int* ptr) {  // Added const qualifier
+void displayValue(int* ptr) {
     printf("Value: %d\n", *ptr);
 }
 
 // extract function
-// Function to create a greeting message
-void createGreeting(const char* name, char* message, size_t size) {
-    snprintf(message, size, "Hello, %s! Welcome!", name);
-}
-
-// Function to print a greeting message
-void printMessage(const char* message) {
-    printf("%s\n", message);
-}
-
 // Function to process and print a greeting message
 void createAndPrintGreeting(const char* name) {
     char message[50];
-    createGreeting(name, message, sizeof(message));  // Call the method to create greeting
-    printMessage(message);                           // Call the method to print greeting
+    // Create the greeting message
+    snprintf(message, sizeof(message), "Hello, %s! Welcome!", name);
+    // Print the greeting message
+    printf("%s\n", message);
 }
 
+
+
+
+
+
+
+
+
 // inline function
+double calculateArea(double radius) {
+    return 3.14159 * radius * radius;
+}
+
 void performAreaCalculation(double radius) {
-    double area = 3.14159 * radius * radius;
+    double area = calculateArea(radius);  // 调用普通函数
     printf("Area: %.2f\n", area);
 }
+
 
 int main() {
 
