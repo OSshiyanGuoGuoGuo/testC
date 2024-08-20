@@ -6,40 +6,39 @@ float multiply(float a, float b);
 float divide(float a, float b);
 
 void mi() {
-    printf("%.2f\n", add(100.0, 100.0));
-    printf("%.2f\n", divide(100.0, 10.0));
+    // add & remove
+    printf("%.2f\n", subtract(100.0, 100.0));
+    // InvocationArgumentsChange
+    printf("%.2f\n", divide(100.0, 100.0));
 }
 
 void cf() {
     int temp = 5;
-
-    if (temp > 1) {
-        printf("Remove this con statement");
-    }
-
+    // add & remove
+    for (int i = 1; i < temp; i++)
+        printf("i=%d", i);
+    // add branch
     if (temp < 6) {
         printf("Today is weekday");
     }
-
+    else
+        printf("Today is weekend");
+    // remove branch
     if (temp == 0)
         printf("temp=0");
-    else if (temp == 1)
-        printf("temp=1");
-    else if (temp == 2)
-        printf("temp=2");
     else
         printf("temp is unknown");
-
-    if (temp % 2 == 0)
+    // ControlConditionChange
+    if (temp % 2 != 0)
         printf("temp is odd number");
-
+    // StatementBranchChange
     int temp1 = 10;
     if (temp1 < 10) {
         printf("temp1 < 10");
-        printf("\n");
     }
     else {
         printf("temp1 >= 10");
+        printf("\n");
     }
 
     printf("Remove this seq statement");
@@ -47,11 +46,12 @@ void cf() {
 }
 
 void df() {
-
-    int a = 10;
-
-    float b = 99.9;
+    // add/remove
+    char str = 'b';
+    //
+    float b = 99.8;
 }
+
 int main() {
     mi();
 
